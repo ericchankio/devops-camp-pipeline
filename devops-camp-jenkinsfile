@@ -70,9 +70,7 @@ pipeline {
                 //TODO("Lab 4 - Artifact Management"): build the docker db image
             }
             //TODO("Lab 4 - Artifact Management"): clean local docker db image
-        }
-        //TODO("Lab 7 - Automated Security Scans"): add a stage
-        post {
+            post {
                 always {
                     echo "Clean local $DB_IMAGE_NAME image"
                     script {
@@ -85,6 +83,9 @@ pipeline {
                     }
                 }
             }
+        }
+        //TODO("Lab 7 - Automated Security Scans"): add a stage
+       
         stage('Deploy') {
             steps {
                 echo "Deployment stage"
