@@ -48,7 +48,9 @@ pipeline {
                           }
                       }
                   }
-                  always {
+                  
+                  post {
+                    always {
                           echo "Clean local $DB_IMAGE_NAME image"
                           script {
                               try {
@@ -59,7 +61,6 @@ pipeline {
                               }
                           }
                       }
-                  post {
                       //TODO: clean local docker images
                   }
               }
@@ -72,6 +73,7 @@ pipeline {
               }
            }
         }
+    }
         
     post {
         cleanup {
